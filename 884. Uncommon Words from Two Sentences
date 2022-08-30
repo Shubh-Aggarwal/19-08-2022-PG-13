@@ -1,0 +1,15 @@
+ vector<string> uncommonFromSentences(string s1, string s2) {
+       vector<string> v;
+        unordered_map<string,int> m;
+        string str;
+        istringstream s(s1+" "+s2);
+        while(s>>str){
+           m[str]++;
+        }
+        for(auto itr:m){
+            if(itr.second==1){
+                v.push_back(itr.first);
+            }
+        }
+        return v;
+        }
